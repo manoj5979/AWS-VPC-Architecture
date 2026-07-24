@@ -1,54 +1,64 @@
 # AWS VPC Architecture Project
 
-## Project Overview
+## Overview
 
-This project demonstrates the design and implementation of a Production and Development VPC architecture on Amazon Web Services (AWS).
+This project was completed as part of my AWS Cloud training. The goal was to design and implement separate Production and Development environments using Amazon VPC while following networking and security best practices.
 
-## Architecture
+The architecture includes multiple subnets, EC2 instances, Internet and NAT Gateways, Security Groups, Network ACLs, and VPC Peering to enable secure communication between both environments.
 
-![Architecture](architecture%20vpc.png)
+---
 
-## Features
+## Project Architecture
 
-- Production VPC
-- Development VPC
-- Public and Private Subnets
+![AWS VPC Architecture](architecture%20vpc.png)
+
+---
+
+## Production Environment
+
+The Production VPC was designed using a 4-tier architecture.
+
+It contains:
+
+- Public Web Subnet
+- Private App1 Subnet
+- Private App2 Subnet
+- Private DBCache Subnet
+- Private Database Subnet
+
+Resources used:
+
 - Internet Gateway
 - NAT Gateway
-- VPC Peering
 - Route Tables
 - Security Groups
 - Network ACLs
 - EC2 Instances
-- Database Connectivity
 
-## Production Network
+---
 
-- 4-tier architecture
-- 1 Public subnet (Web)
-- 4 Private subnets
-  - App1
-  - App2
-  - DBCache
-  - Database
+## Development Environment
 
-## Development Network
+The Development VPC contains:
 
-- 2-tier architecture
-- Public Web subnet
-- Private Database subnet
+- Public Web Subnet
+- Private Database Subnet
 
-## Connectivity
+Resources used:
 
-- Internet Gateway for public access
-- NAT Gateway for private subnet internet access
-- VPC Peering between Production and Development
-- Database communication between both VPCs
+- EC2 Instances
+- Route Tables
+- Security Groups
+- Network ACLs
 
-## Technologies Used
+---
+
+## Networking
+
+The following networking components were configured during this project:
 
 - Amazon VPC
-- EC2
+- Public and Private Subnets
 - Internet Gateway
 - NAT Gateway
 - Route Tables
@@ -56,11 +66,36 @@ This project demonstrates the design and implementation of a Production and Deve
 - Network ACLs
 - VPC Peering
 
+The Production and Development VPCs were connected through VPC Peering, allowing communication between the database subnets.
+
+---
+
+## Skills Demonstrated
+
+- AWS VPC
+- EC2
+- Subnet Design
+- Internet Gateway
+- NAT Gateway
+- Route Tables
+- Security Groups
+- Network ACLs
+- VPC Peering
+- Cloud Networking
+
+---
+
 ## Documentation
 
-Complete project documentation is available in:
+The complete assignment report is available in:
 
 - **vpc assignment done.pdf**
+
+The editable architecture diagram is included as:
+
+- **vpc.drawio**
+
+---
 
 ## Author
 
